@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:viewModel="clr-namespace:AndroidCarousel"
+	x:Class="AndroidCarousel.MainPage"
+	FlowDirection="RightToLeft">
+	<ContentPage.BindingContext>
+		<viewModel:MainViewModel />
+	</ContentPage.BindingContext>
+	<Grid
+		BackgroundColor="#F5F5F5">
+		<CarouselView
+			PeekAreaInsets="30,0"
+			ItemsSource="{Binding ListData}"
+			VerticalOptions="FillAndExpand"
+			HorizontalScrollBarVisibility="Never"
+			VerticalScrollBarVisibility="Never">
+			<CarouselView.ItemsLayout>
+				<LinearItemsLayout
+					ItemSpacing="10"
+					Orientation="Horizontal"
+					SnapPointsType="Mandatory"
+					SnapPointsAlignment="Center" />
+			</CarouselView.ItemsLayout>
+			<CarouselView.ItemTemplate>
+				<DataTemplate>
+					<Grid>
+						<Frame
+							HasShadow="False"
+							BorderColor="Gray"
+							VerticalOptions="Center"
+							BackgroundColor="White">
+							<Grid
+								HeightRequest="200">
+								<Label
+									Text="{Binding .}"
+									TextColor="Black"
+									FontSize="15"
+									HorizontalTextAlignment="Center"
+									VerticalTextAlignment="Center" />
+							</Grid>
+						</Frame>
+					</Grid>
+				</DataTemplate>
+			</CarouselView.ItemTemplate>
+		</CarouselView>
+	</Grid>
+</ContentPage>

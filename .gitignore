@@ -1,0 +1,9 @@
+packages/*
+.vs
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+Resource.designer.cs
